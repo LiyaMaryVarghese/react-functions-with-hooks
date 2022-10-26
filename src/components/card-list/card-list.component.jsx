@@ -1,16 +1,12 @@
+import Card from '../card/card.component';
+import './card-list.styles.css';
 
-import './card-list.css';
-import Card from "../card/card.component"; 
+const CardList = ({ monsters }) => (
+  <div className='card-list'>
+    {monsters.map((monster) => {
+      return <Card key={monster.id} monster={monster} />;
+    })}
+  </div>
+);
 
-const CardList = (props)=>  {
-   return(
-            <div key="123" className="card-list">{
-                props.monsters.map((monster) => {
-                  return  <Card monster={monster}/>
-
-                })}
-           </div>
-   );
-}
 export default CardList;
-
